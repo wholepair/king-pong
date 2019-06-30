@@ -45,13 +45,13 @@ t.start()
 '''
 
 #lets preload images to use as the ball and paddle!!!
-myimage = pygame.image.load("eugene.png")
+myimage = pygame.image.load("lander_best.jpg")
 imagerect = myimage.get_rect().size
 image_rect_x, image_rect_y = imagerect
 print(image_rect_x)
 print(image_rect_y)
 
-myimage2 = pygame.image.load("paddle_slug.png")
+myimage2 = pygame.image.load("moon.png")
 imagerect2 = myimage2.get_rect().size
 image2_rect_x, image2_rect_y = imagerect2
 print(image2_rect_x)
@@ -66,8 +66,8 @@ BLUE = (0,0,255)
 pygame.init()
 #Initializing the display window
 size = (1800,900)
-screen = pygame.display.set_mode(size)
-#screen = pygame.display.set_mode((size), pygame.FULLSCREEN)
+#screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode((size), pygame.FULLSCREEN)
 pygame.display.set_caption("pong")
 pygame.mouse.set_visible(0)
 #Starting coordinates of the paddle
