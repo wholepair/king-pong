@@ -45,7 +45,7 @@ t.start()
 '''
 
 #lets preload images to use as the backgound the ball and the paddle!!!
-myimage = pygame.image.load("lander_best.png")
+myimage = pygame.image.load("lander_final.png")
 imagerect = myimage.get_rect().size
 image_rect_x, image_rect_y = imagerect
 print(image_rect_x)
@@ -135,7 +135,7 @@ while not done:
 	# well that's not working....
 
 
-	screen.fill(WHITE)
+	screen.fill(BLACK)
 	rect_x = rect_mouse_x
 	rect_y = 880
 	ball_x += ball_change_x 
@@ -167,19 +167,19 @@ while not done:
 	#screen.blit(myimage, (ball_x, ball_y))
 	#drawpaddle(screen,ball_x,ball_y)
 	#drawrect(screen,rect_x,rect_y)
-	screen.blit(bg, (0,0))
+	screen.blit(bg, (((rect_x/2000)*-200),0))
 	screen.blit(myimage2, (rect_x, 900 - image2_rect_y))
 	screen.blit(myimage, (ball_x, ball_y))
 
 	#score board and some debug output
-	font= pygame.font.SysFont('Calibri', 75, False, False)
-	small_font= pygame.font.SysFont('Calibri', 25, False, False)
-	text = font.render("Hits = " + str(hits), True, BLACK)
-	text_mouse = small_font.render("Mouse X Postion = " + str(rect_mouse_x), True, BLACK)
-	text2 = font.render("Misses = " + str(misses), True, BLACK)
-	screen.blit(text,[550,400])
-	screen.blit(text2,[950,400])
-	screen.blit(text_mouse,[100,100])
+	font= pygame.font.SysFont('Calibri', 35, False, False)
+	small_font= pygame.font.SysFont('Calibri', 35, False, False)
+	text = font.render("Hits = " + str(hits), True, (0,128,0))
+	text_mouse = small_font.render("Mouse X Postion = " + str(rect_mouse_x), True, (0,128,0))
+	text2 = font.render("Misses = " + str(misses), True, (0,128,0))
+	screen.blit(text,[550,25])
+	screen.blit(text2,[950,25])
+	screen.blit(text_mouse,[100,25])
 
 
 	pygame.display.flip()
