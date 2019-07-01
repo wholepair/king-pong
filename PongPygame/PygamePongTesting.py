@@ -44,8 +44,8 @@ t.daemon = True
 t.start()
 '''
 
-#lets preload images to use as the ball and paddle!!!
-myimage = pygame.image.load("lander_best.jpg")
+#lets preload images to use as the backgound the ball and the paddle!!!
+myimage = pygame.image.load("lander_best.png")
 imagerect = myimage.get_rect().size
 image_rect_x, image_rect_y = imagerect
 print(image_rect_x)
@@ -56,6 +56,12 @@ imagerect2 = myimage2.get_rect().size
 image2_rect_x, image2_rect_y = imagerect2
 print(image2_rect_x)
 print(image2_rect_y)
+
+bg = pygame.image.load("background1.jpg")
+imagerect_bg = bg.get_rect().size
+imagerect_bg_x, imagerect_bg_y = imagerect_bg
+print(imagerect_bg_x)
+print(imagerect_bg_y)
 
 BLACK = (0,0,0)
 WHITE = (255,255,255)
@@ -161,6 +167,7 @@ while not done:
 	#screen.blit(myimage, (ball_x, ball_y))
 	#drawpaddle(screen,ball_x,ball_y)
 	#drawrect(screen,rect_x,rect_y)
+	screen.blit(bg, (0,0))
 	screen.blit(myimage2, (rect_x, 900 - image2_rect_y))
 	screen.blit(myimage, (ball_x, ball_y))
 
